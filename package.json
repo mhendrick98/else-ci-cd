@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "babel src -d dist",
+    "test": "mocha --require babel-register",
     "webpack": "webpack"
   },
   "dependencies": {
@@ -12,6 +13,10 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "sinon": "^4.0.2",
+    "sinon-chai": "^2.14.0",
     "webpack": "^3.8.1"
   }
 }

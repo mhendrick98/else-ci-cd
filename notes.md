@@ -17,6 +17,8 @@ Add a build step to npm to transpile code to ES2015:
 }
 ```
 
+Build your code with ```npm run build```.
+
 ### Webpack
 See the [Babel Modules](https://babeljs.io/docs/plugins/#transform-plugins-modules) doc for the different module options.
 
@@ -64,7 +66,26 @@ module.exports = {
 };
 ```
 
-### Mocha + Chai
+Compile your code with ```npm run webpack```.
+
+### Mocha + Chai + Sinon
+
+Install [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon]():
+
+```npm install --save-dev mocha chai sinon sinon-chai```
+
+Create a `test` folder and add your tests, following the `$name$-test.js` pattern.  
+Add a new test command to `package.json`:
+
+```
+"scripts": {
+  "test": "mocha --require babel-register"
+}
+```
+
+Run your tests with ```npm test```.
+
+#### Spies and mocks
 
 ### Istanbul
 
