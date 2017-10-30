@@ -87,6 +87,28 @@ Run your tests with ```npm test```.
 
 #### Spies and mocks
 
+Install mock local storage:
+
+```npm install --save-dev mock-local-storage```
+
+And register it with Mocha in package.json:
+
+```
+"scripts": {
+  "test": "mocha --require babel-register mock-local-storage"
+}
+```
+
+Import the mocked localstorage object in your tests:
+
+```javascript
+global.window = {};
+import localStorage from 'mock-local-storage';
+window.localStorage = global.localStorage;
+```
+
+#### Mock Server
+
 ### Istanbul
 
 ### Karma
