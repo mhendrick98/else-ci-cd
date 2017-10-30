@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "babel src -d dist"
+    "build": "babel src -d dist",
+    "webpack": "webpack"
   },
   "dependencies": {
     "todomvc-app-css": "^2.0.1",
@@ -9,6 +10,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.8.1"
   }
 }
