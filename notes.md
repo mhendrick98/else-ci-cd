@@ -132,6 +132,18 @@ requests[0].respond(
 
 ### Istanbul
 
+Install Istanbul:
+
+```npm install --save-dev nyc```
+
+Modify testing script with nyc:
+
+```
+"scripts": {
+  "test": "nyc mocha --require babel-register"
+}
+```
+
 ### Karma
 
 ### ESLint
