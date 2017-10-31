@@ -1,3 +1,6 @@
+# Else-CI-CD
+[![Build Status](https://travis-ci.org/frederickjansen/else-ci-cd.svg?branch=master)](https://travis-ci.org/frederickjansen/else-ci-cd)
+
 ### Babel
 
 [Babel](https://babeljs.io/) is used to transpile JavaScript code in order to target older browsers.
