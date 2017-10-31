@@ -144,6 +144,31 @@ Modify testing script with nyc:
 }
 ```
 
+### Travis
+
+Add Coveralls as a dependency:
+
+```npm install --save-dev coveralls```
+
+Create script that pipes Istanbul coverage to Coveralls:
+
+```
+"scripts": {
+  "coverage": "nyc report --reporter=text-lcov | coveralls"
+}
+```
+
+Create `.travis.yml` file:
+
+```yaml
+language: node_js
+node_js:
+ - "stable"
+after_success: npm run coverage
+```
+
+Enter environment variable `COVERALLS_REPO_TOKEN` in Travis. 
+
 ### Karma
 
 ### ESLint
