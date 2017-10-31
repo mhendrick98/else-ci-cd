@@ -1,4 +1,7 @@
 ### Babel
+
+[Babel](https://babeljs.io/) is used to transpile JavaScript code in order to target older browsers.
+
 ```npm install --save-dev babel-cli babel-preset-env```
 
 Create a new `.babelrc` file with ES2015 as the environment:
@@ -108,6 +111,24 @@ window.localStorage = global.localStorage;
 ```
 
 #### Mock Server
+
+Create a fake `XMLHttpRequest`:
+
+```javascript
+xhr = sinon.useFakeXMLHttpRequest();
+requests = [];
+xhr.onCreate = function (req) { requests.push(req); };
+```
+
+Add fake response for XHR requests:
+
+```javascript
+requests[0].respond(
+  200,
+  { 'Content-Type': 'application/json' },
+  JSON.stringify([{ id: 1, title: 'Finish demo', completed: true }])
+);
+```
 
 ### Istanbul
 

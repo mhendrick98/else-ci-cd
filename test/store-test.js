@@ -4,6 +4,7 @@ import Store from '../src/store';
 
 global.window = {};
 import localStorage from 'mock-local-storage';
+// noinspection JSAnnotator
 window.localStorage = global.localStorage;
 
 const chai = require('chai');
@@ -25,7 +26,6 @@ describe('hello', () => {
     expect(cb).to.have.been.calledWith('hello foo');
   });
 });
-
 
 
 let store;
@@ -57,5 +57,5 @@ describe('Local Storage insert', () => {
     store.insert(data);
 
     expect(store.setLocalStorage).to.have.been.calledWith([data]);
-  })
+  });
 });
