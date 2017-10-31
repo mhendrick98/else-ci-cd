@@ -15,7 +15,9 @@ let remote;
 beforeEach(() => {
   xhr = sinon.useFakeXMLHttpRequest();
   requests = [];
-  xhr.onCreate = function (req) { requests.push(req); };
+  xhr.onCreate = function (req) {
+    requests.push(req);
+  };
   global.XMLHttpRequest = xhr;
 
   remote = new Remote();
@@ -33,10 +35,19 @@ describe('Remote Storage get', () => {
 
     requests[0].respond(
       200,
-      { 'Content-Type': 'application/json' },
-      JSON.stringify([{ id: 1, title: 'Finish demo', completed: true }])
+      {'Content-Type': 'application/json'},
+      JSON.stringify([{id: 1, title: 'Finish demo', completed: true}])
     );
 
     expect(cb).to.have.been.calledOnce;
   });
+
+  it('should throw error when URL is not found', () => {
+    const cb = sinon.spy();
+    remote.get({foo: 'bar'}, 'localhost', cb);
+
+    expect(() => requests[0].respond(404, null, null)).to.throw();
+    expect(cb).to.not.have.been.called;
+  });
+
 });

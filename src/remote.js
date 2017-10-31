@@ -19,6 +19,8 @@ export default class Remote {
     xhr.onreadystatechange = () => {
       if (xhr.readyState > 3 && xhr.status === 200) {
         callback(xhr.responseText);
+      } else if (xhr.readyState > 3 && xhr.status === 404) {
+        throw new Error('URL not found.');
       }
     };
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
